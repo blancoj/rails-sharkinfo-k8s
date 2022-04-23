@@ -1,4 +1,4 @@
-FROM ruby:2.5.1-alpine
+FROM ruby:2.7.4-alpine
 
 ENV BUNDLER_VERSION=2.0.2
 
@@ -24,7 +24,7 @@ RUN apk add --update --no-cache \
       openssl \
       pkgconfig \
       postgresql-dev \
-      python \
+      python2 \
       tzdata \
       yarn
 
