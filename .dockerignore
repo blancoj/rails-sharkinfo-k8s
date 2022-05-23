@@ -16,3 +16,5 @@ node_modules
 yarn-error.log
 coverage/
 .env
+.env-for-docker-compose
+secret.yaml
