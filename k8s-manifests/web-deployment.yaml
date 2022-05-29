@@ -48,7 +48,7 @@ spec:
             - name: RAILS_ENV
               value: production
             - name: POSTGRES_PORT
-              value: 5432
+              value: "5432"
             - name: RAILS_MASTER_KEY
               valueFrom:
                 secretKeyRef:
