@@ -20,17 +20,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-<<<<<<< HEAD
-      # - name: "Say Hello"
-      #   env:
-      #     First_Name: WORLD
-      #   run: echo "HELLO $First_Name"
-=======
-      - name: "Say Hello"
-        env:
-          First_Name: WORLD
-        run: echo "HELLO $First_Name"
->>>>>>> 49aa53ae4451766824c65ab6f60cd910f4aa4f60
       - name: Build image and push to GitHub Container Registry
         env:
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }} 
