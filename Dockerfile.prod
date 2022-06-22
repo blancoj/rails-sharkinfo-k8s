@@ -45,9 +45,9 @@ RUN yarn install --check-files
 COPY . ./
 
 RUN bundle exec rake webpacker:compile
-# RUN RAILS_ENV=production bundle exec rake assets:precompile
-# RUN bin/rails assets:precompile
-# temp secret key? Seems to work ok... https://2n.pl/blog/rails-cd-with-docker-github-and-vps
+# temp secret key for asset compilation? Seems to work ok... https://2n.pl/blog/rails-cd-with-docker-github-and-vps
 RUN SECRET_KEY_BASE="assets_compile" RAILS_ENV=production bin/rails assets:precompile
+
+ENV RAILS_LOG_TO_STDOUT true
 
 CMD ["./entrypoints/docker-entrypoint.sh"]
