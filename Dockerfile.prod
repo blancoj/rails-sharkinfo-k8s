@@ -47,6 +47,7 @@ COPY . ./
 RUN bundle exec rake webpacker:compile
 # RUN RAILS_ENV=production bundle exec rake assets:precompile
 # RUN bin/rails assets:precompile
-RUN RAILS_ENV=production bin/rails assets:precompile
+# temp secret key?
+RUN SECRET_KEY_BASE="assets_compile" RAILS_ENV=production bin/rails assets:precompile
 
 CMD ["./entrypoints/docker-entrypoint.sh"]
