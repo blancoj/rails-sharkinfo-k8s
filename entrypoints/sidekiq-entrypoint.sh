@@ -7,4 +7,4 @@ if [ -f tmp/pids/server.pid ]; then
 fi
 
  # bundle exec sidekiq
- bundle exec sidekiq --environment=production
+ SECRET_KEY_BASE="sidekiq_startup" RAILS_ENV=production bundle exec sidekiq
