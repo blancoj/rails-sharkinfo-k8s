@@ -14,6 +14,8 @@ class EndangeredController < ApplicationController
 
   def upload
     csv_file = File.join Rails.root, 'db', 'sharks.csv'
+    Rails.logger.info("EndangeredController")
+    Rails.logger.info("csv file present? #{csv_file.present?}")
     AddEndangeredWorker.perform_async(csv_file)
     redirect_to endangered_data_path, notice: 'Endangered sharks have been uploaded!'
   end

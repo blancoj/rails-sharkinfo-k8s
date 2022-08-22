@@ -6,7 +6,5 @@ Sample project demonstrating how to use Docker Compose to containerize a Ruby on
 
 https://www.digitalocean.com/community/tutorials/how-to-migrate-a-docker-compose-workflow-for-rails-development-to-kubernetes
 
-STUFF
-
 ...
 
