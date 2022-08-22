@@ -49,7 +49,7 @@ spec:
                 configMapKeyRef:
                   key: REDIS_PORT
                   name: env
-          image: ghcr.io/sethaj/rails-sharkinfo-k8s/rails-sharkinfo-k8s:latest
+          image: ghcr.io/blancoj/rails-sharkinfo-k8s/rails-sharkinfo-k8s:latest
           name: sidekiq
           resources: {}
       restartPolicy: Always
