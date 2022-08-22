@@ -30,6 +30,11 @@ spec:
                 configMapKeyRef:
                   key: REDIS_PORT
                   name: env
+            - name: REDIS_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: REDIS_HOST
+                  name: env
             - name: DATABASE_NAME
               valueFrom:
                 secretKeyRef:
@@ -45,15 +50,25 @@ spec:
                 secretKeyRef:
                   name: database-secret
                   key: DATABASE_USER
-            - name: RAILS_ENV
-              value: production
-            - name: POSTGRES_PORT
-              value: "5432"
+            - name: DATABASE_PORT
+              valueFrom:
+                configMapKeyRef:
+                  key: DATABASE_PORT
+                  name: env
+            - name: DATABASE_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: DATABASE_HOST
+                  name: env
             - name: RAILS_MASTER_KEY
               valueFrom:
                 secretKeyRef:
                   name: database-secret
                   key: RAILS_MASTER_KEY
+            - name: RAILS_ENV
+              value: production
+            - name: RAILS_SERVE_STATIC_FILES
+              value: "true"
           image: ghcr.io/sethaj/rails-sharkinfo-k8s/rails-sharkinfo-k8s:latest
           name: web # app 
           ports:
