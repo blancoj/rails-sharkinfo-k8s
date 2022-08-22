@@ -69,7 +69,7 @@ spec:
               value: production
             - name: RAILS_SERVE_STATIC_FILES
               value: "true"
-          image: ghcr.io/sethaj/rails-sharkinfo-k8s/rails-sharkinfo-k8s:latest
+          image: ghcr.io/blancoj/rails-sharkinfo-k8s/rails-sharkinfo-k8s:latest
           name: web # app 
           ports:
             - containerPort: 3000
